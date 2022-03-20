@@ -29,12 +29,12 @@ createSourceFile() { # 引数 : $cName, $cppName
   pushd /usr/bin
   cat <<EOS > $cName
 #include <stdio.h>
-int main() { printf("Hello World C\n"); }
+int main() { printf("hello, world C\n"); }
 EOS
 
   cat <<EOS > $cppName
 #include <iostream>
-int main() { std::cout << "Hello World C++\n"; }
+int main() { std::cout << "hello, world C++\n"; }
 EOS
   popd
 }
