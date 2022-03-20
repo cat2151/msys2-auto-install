@@ -48,7 +48,7 @@ build() { # 引数 : compiler, sourceName, option
   echo "$compiler"
   rm -f $exeName # コンパイル失敗時に状況をわかりやすくする用（以前生成したものが残っているとわかりづらいので）
   ls -al --color $sourceName
-  env MSYSTEM=MINGW64 /usr/bin/bash --login -c "cd /usr/bin; $compiler -o $exeName $sourceName $option; ls -al --color $exeName; $exeName; echo $?"
+  env MSYSTEM=MINGW64 /usr/bin/bash --login -c "cd /usr/bin; $compiler -o $exeName $sourceName -ggdb $option; ls -al --color $exeName; gdb $exeName --eval-command=list --batch; $exeName; echo $?"
   mv -f $exeName $WD../../../install # hello world exeを msys64/../install に移動する
 }
 
@@ -81,6 +81,7 @@ EOS
 }
 
 main() {
+  # 開発時はそれぞれを適宜コメントアウトして効率化する
   installGcc
   installClang
   buildHelloWorld

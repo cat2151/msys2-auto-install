@@ -90,10 +90,10 @@ function download_install_gcc_clang_sh($Env:WD) {
   #cp ${scriptDir}\install_gcc_clang.sh ${Env:WD}install_gcc_clang.sh # sh開発用
 }
 
-
 function main() {
+  # 開発時はここと download_install_gcc_clang_sh内 それぞれを適宜コメントアウトして効率化する
   $exeFullpath = downloadMsys2Exe
-  #$exeFullpath = "${msys64instDir}\msys2-x86_64-20220128.exe" # 開発用（以降を開発するとき用）
+  #$exeFullpath = "${msys64instDir}\msys2-x86_64-20220319.exe" # 開発用（以降を開発するとき用）
   installMsys2 $exeFullpath
   installGccClang
 }
