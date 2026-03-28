@@ -1,0 +1,8 @@
+title: "msys2-auto-install"
+description: "msys2-auto-install"
+theme: jekyll-theme-slate
+github:
+  is_project_page: true
+  repository_url: https://github.com/cat2151/msys2-auto-install
+plugins:
+  - jekyll-sitemap
